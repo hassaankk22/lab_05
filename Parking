@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main() {
+    int hours, vehicle;
+    char membership;
+    double charges;
+
+    printf("Enter your vehicle type\n1 Bike\n2 Car\n3 - Truck\n");
+    scanf("%d", &vehicle);
+
+    printf("Enter your membership status: (y/n)\n");
+    scanf(" %c", &membership);
+
+    printf("Enter your parking hours: \n");
+    scanf("%d", &hours);
+
+    switch(vehicle) {
+        case(1):
+            charges = 20 * hours;
+            break;
+
+        case(2):
+            if(hours <= 2) {
+                charges = 50;
+            }
+            else {
+                charges = 50 + 30 * (hours - 2);
+            }
+            break;
+
+        case(3):
+            if(hours <= 3) {
+                charges = 100;
+            }
+            else {
+                charges = 100 + 50 * (hours - 3);
+            }
+            break;
+
+        default:
+            printf("Invalid input\n");
+    }
+
+    if((membership == 'Y' || membership == 'y') && charges > 200) {
+        charges = charges * 0.75;
+    }
+
+    if((membership == 'Y' || membership == 'y') && charges > 200) {
+        printf("Your Final Charges are: %.2f", charges);
+    }
+    else {
+        printf("Your Total Charges are: %.2f", charges);
+    }
+
+    return 0;
+}
