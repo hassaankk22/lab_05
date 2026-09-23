@@ -49,7 +49,7 @@ int main() {
         printf("Your Final Charges are: %.2f", charges);
     }
     else {
-        printf("Your Total Charges are: %.2f", charges);
+        printf("Your Total Charges are: %.2f helooooo", charges);
     }
 
     return 0;
